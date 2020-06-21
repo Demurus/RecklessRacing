@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
 	//public SaveLoadSystem SaveLoadSystem => saveLoadSystem;
 	public InputController InputController;
+	public LevelController LevelController;
 	public UnityAction OnStageIsOver;
 	//public UnityAction<int> OnCoinsChange;
 	
@@ -60,7 +61,7 @@ public class GameController : MonoBehaviour
 	private void Start()
 	{
 		//menuUI.Init();
-		InputController.Init();
+		//InputController.Init();
 		StartNewGame();
 	}
 
@@ -74,7 +75,7 @@ public class GameController : MonoBehaviour
 	public void LoadLevel()
 	{
 		Debug.Log("Loading Level");
-		//levelsController.LoadLevel();
+		LevelController.LoadLevel("Level_IslandHighway");
 	}
 	public void UnloadLevel()
 	{

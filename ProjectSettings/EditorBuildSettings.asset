@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 7d772118e4415db4a87de16f2f807a8b
+  - enabled: 1
+    path: Assets/Scenes/Level_IslandHighway.unity
+    guid: c6d35cb124c57884ba7f9fc1afea0bbe
   m_configObjects: {}
