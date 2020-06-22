@@ -9,32 +9,40 @@ public class InitializeNewGame : State
         base.OnStateStart();
 
         GameController.Instance.LoadLevel();
-
+        GameController.Instance.LevelController.OnLevelLoaded += InitLevel;
         //TODO: Создание уровня, загрузка префабов
 
-        GameController.Instance.InputController.OnHold += DoContinue;
-        GameController.Instance.InputController.Interactable = true;
-        //GameController.Instance.MenuUI.StartForm.Show();
-        // GameC.Instance.MenuUI.Tutorial.TutorialForm = TutorialStages.Start;
-
+         //GameController.Instance.InputController.OnHold += DoContinue;
+         // GameController.Instance.InputController.Interactable = true;
+         //GameController.Instance.MenuUI.StartForm.Show();
+         // GameC.Instance.MenuUI.Tutorial.TutorialForm = TutorialStages.Start;
     }
 
-    private void DoContinue(bool condition)
+    private void InitLevel()
     {
-        GameController.Instance.InputController.Interactable = false;
-        State.Start<Level>();
+        GameController.Instance.LevelController.OnLevelLoaded -= InitLevel;
+        GameController.Instance.InitLevel();
+        GameController.Instance.OnRaceIsReady += ContinueRace;
+    }
+
+    private void ContinueRace()
+    {
+       // GameController.Instance.InputController.Interactable = false;
+        State.Start<Race>();
+        
     }
 
     protected override void OnStateEnd()
     {
-        GameController.Instance.InputController.OnHold -= DoContinue;
+       // GameController.Instance.InputController.OnHold -= DoContinue;
         //GameC.Instance.MenuUI.StartForm.Hide();
     }
     protected override void OnStateRestart()
     {
-        GameController.Instance.InputController.OnHold -= DoContinue;
+        //GameController.Instance.InputController.OnHold -= DoContinue;
         //GameController.Instance.MenuUI.StartForm.Hide();
     }
 
+    
 
 }

@@ -129,6 +129,7 @@
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Controllers\InputController.cs" />
     <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelCarsSpawnPositions.cs" />
     <Compile Include="Assets\Scripts\States\EndOfGame.cs" />
     <Compile Include="Assets\Scripts\States\InitializeNewGame.cs" />
     <Compile Include="Assets\Scripts\States\Level.cs" />

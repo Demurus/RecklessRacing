@@ -9,15 +9,20 @@ public class GameController : MonoBehaviour
 	//[SerializeField] private LevelsController levelsController;
 	//private SaveLoadSystem saveLoadSystem;
 	//public MenuUI MenuUI => menuUI;
+	[SerializeField] private RCC_CarControllerV3[] _cars;
+	[SerializeField] private RCC_CarControllerV3 _player;
 	private static GameController _instance;
 
 	//private int level = 1;
 	//private int coins;
 
 	//public SaveLoadSystem SaveLoadSystem => saveLoadSystem;
-	public InputController InputController;
+	//public InputController InputController;
 	public LevelController LevelController;
+	public LevelCarsSpawnPositions LevelCarsSpawnPositions;
+
 	public UnityAction OnStageIsOver;
+	public UnityAction OnRaceIsReady;
 	//public UnityAction<int> OnCoinsChange;
 	
 	public static GameController Instance => _instance;
@@ -71,7 +76,18 @@ public class GameController : MonoBehaviour
 		State.Start<InitializeNewGame>();
 
 	}
+	public void InitLevel()
+	{
+		Transform[] spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints();
+		RCC_CarControllerV3 player= RCC.SpawnRCC(_cars[0], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity, true, false, true);
+		_player = player;
+		StartCoroutine(RaceCountDown());
+	}
 
+	public void SetPlayerControllable()
+	{
+		_player.SetCanControl(true);
+	}
 	public void LoadLevel()
 	{
 		Debug.Log("Loading Level");
@@ -98,6 +114,13 @@ public class GameController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(t);
 		p?.Invoke();
+	}
+
+	IEnumerator RaceCountDown()
+	{
+		yield return new WaitForSeconds(3.0f);
+		Debug.Log("RACE!");
+		OnRaceIsReady?.Invoke();
 	}
 
 	//void OnApplicationPause(bool pauseStatus)

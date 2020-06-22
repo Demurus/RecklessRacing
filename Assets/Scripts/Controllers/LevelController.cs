@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
    private string _activeLevelName;
+   public UnityAction OnLevelLoaded;
    public void LoadLevel(string name)
     {
 		SceneManager.sceneLoaded += OnSceneLoaded;
@@ -18,8 +20,6 @@ public class LevelController : MonoBehaviour
 	{
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 		SceneManager.SetActiveScene(SceneManager.GetSceneByName(_activeLevelName));
-		// do some init
-		//_gameManager.Init();
-		
+		OnLevelLoaded?.Invoke();
 	}
 }

@@ -209,14 +209,16 @@ public class RCC_Camera : MonoBehaviour{
 	void Update(){
 
 		// If it's active, enable the camera. If it's not, disable the camera.
-		if (!isRendering) {
-
+		if (!isRendering) 
+		{
 			if(thisCam.gameObject.activeInHierarchy)
 				thisCam.gameObject.SetActive (false);
 
 			return;
 
-		} else {
+		} 
+		else 
+		{
 
 			if(!thisCam.gameObject.activeInHierarchy)
 				thisCam.gameObject.SetActive (true);
@@ -422,7 +424,6 @@ public class RCC_Camera : MonoBehaviour{
 			direction = playerCar.direction;
 			orbitX = 0f;
 			orbitY = 0f;
-
 		}
 
 		lastDirection = playerCar.direction;
@@ -462,8 +463,8 @@ public class RCC_Camera : MonoBehaviour{
 			currentRotation = wantedRotation;
 
 		// Rotates camera by Z axis for tilt effect.
-		TPSTiltAngle = Mathf.Lerp(0f, TPSTiltMaximum * Mathf.Clamp(-playerVelocity.x, -1f, 1f), Mathf.Abs(playerVelocity.x) / 50f);
-		TPSTiltAngle *= TPSTiltMultiplier;
+		//TPSTiltAngle = Mathf.Lerp(0f, TPSTiltMaximum * Mathf.Clamp(-playerVelocity.x, -1f, 1f), Mathf.Abs(playerVelocity.x) / 50f);
+		//TPSTiltAngle *= TPSTiltMultiplier;
 
 		// Set the position of the camera on the x-z plane to distance meters behind the target.
 		targetPosition = playerCar.transform.position;

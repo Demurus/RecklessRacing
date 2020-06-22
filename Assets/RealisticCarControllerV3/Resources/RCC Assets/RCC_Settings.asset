@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RCCVersion: 3.3
   controllerSelectedIndex: 0
-  behaviorSelectedIndex: 0
+  behaviorSelectedIndex: 3
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
   maxAngularVelocity: 8
-  overrideBehavior: 0
+  overrideBehavior: 1
   behaviorTypes:
   - behaviorName: Simulator
     steeringHelper: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
     steerHelperLinearVelStrengthMinimum: 0.5
     steerHelperLinearVelStrengthMaximum: 1
     tractionHelperStrengthMinimum: 0.25
-    tractionHelperStrengthMaximum: 1
+    tractionHelperStrengthMaximum: 0.37
     antiRollFrontHorizontalMinimum: 10000
     antiRollRearHorizontalMinimum: 10000
     gearShiftingDelayMaximum: 0.1
@@ -288,4 +288,4 @@ MonoBehaviour:
   foldWheelPhysics: 0
   foldSFX: 0
   foldOptimization: 0
-  foldTagsAndLayers: 1
+  foldTagsAndLayers: 0
