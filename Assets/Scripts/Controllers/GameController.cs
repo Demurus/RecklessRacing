@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
 	//public SaveLoadSystem SaveLoadSystem => saveLoadSystem;
 	//public InputController InputController;
 	public LevelController LevelController;
+	public UIController UIController;
 	public LevelCarsSpawnPositions LevelCarsSpawnPositions;
 
 	public UnityAction OnStageIsOver;
@@ -81,12 +82,18 @@ public class GameController : MonoBehaviour
 		Transform[] spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints();
 		RCC_CarControllerV3 player= RCC.SpawnRCC(_cars[0], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity, true, false, true);
 		_player = player;
-		StartCoroutine(RaceCountDown());
+		UIController.StartRacePrep();
+		//OnRaceIsReady += StartRace;
 	}
 
+	//private void StartRace()
+	//{
+	//	State.Start<Race>();
+	//}
 	public void SetPlayerControllable()
 	{
 		_player.SetCanControl(true);
+		
 	}
 	public void LoadLevel()
 	{
@@ -116,12 +123,7 @@ public class GameController : MonoBehaviour
 		p?.Invoke();
 	}
 
-	IEnumerator RaceCountDown()
-	{
-		yield return new WaitForSeconds(3.0f);
-		Debug.Log("RACE!");
-		OnRaceIsReady?.Invoke();
-	}
+	
 
 	//void OnApplicationPause(bool pauseStatus)
 	//{

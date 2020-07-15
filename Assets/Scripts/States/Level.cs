@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Race : State
 {
-    int stage;
+    //int stage;
     protected override void OnStateStart()
     {
         base.OnStateStart();
@@ -12,7 +12,7 @@ public class Race : State
         //stageProgress = GameC.Instance.MenuUI.StageProgress;
         //GameController.Instance.OnStageIsOver += DoEndStage;
         //GameController.Instance.InputController.Interactable = true;
-        stage = 1;
+       // stage = 1;
         Debug.Log("Level Started");
         DoContinueState();
     }

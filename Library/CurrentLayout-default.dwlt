@@ -95,7 +95,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 221}
   m_MaxSize: {x: 12004, y: 4021}
   vertical: 1
-  controlID: 72
+  controlID: 218
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 230, y: 271}
   m_MaxSize: {x: 10000, y: 10021}
   vertical: 0
-  controlID: 24
+  controlID: 17
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 1085
     height: 1011
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 19}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 121}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
-  controlID: 97
+  controlID: 92
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 221}
   m_MaxSize: {x: 12004, y: 4021}
   vertical: 0
-  controlID: 73
+  controlID: 219
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -339,8 +339,8 @@ MonoBehaviour:
     y: 0
     width: 535
     height: 947
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -365,8 +365,8 @@ MonoBehaviour:
     y: 0
     width: 450
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 27}
   m_Panes:
   - {fileID: 27}
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 57396
+  m_LastSelectedObjectID: 13870
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -557,20 +557,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/RealisticCarControllerV3/Prefabs/Vehicles
+    - Assets/Scripts/UI
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/RealisticCarControllerV3/Prefabs/Vehicles
+  - Assets/Scripts/UI
   m_LastFoldersGridSize: 16
   m_LastProjectPath: O:\UNITY\!GITHUB\3DRacingGame_git\3DRacingGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c620000
-    m_LastClickedID: 25132
-    m_ExpandedIDs: 0000000086510000885100008a5100008c5100008e51000090510000a2510000f261000000ca9a3b
+    m_SelectedIDs: b28e0000
+    m_LastClickedID: 36530
+    m_ExpandedIDs: 00000000c0480000c2480000c4480000c6480000c8480000de48000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -598,7 +598,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086510000885100008a5100008c5100008e51000090510000
+    m_ExpandedIDs: 00000000c0480000c2480000c4480000c6480000c8480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -629,15 +629,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: eaaa3f000eab3f00d0ac3f00ceac3f00a6797f004a6600005a6600002a620000a4211a00b8430000d6430000f6430000664800003a450000703e00006a4600000c3d0000be0601002c0a0100a8bc3600564d000014550000f04f0000cc7f0400be5e0000a0340600146500001065000012650000d09e0700f4890000f057000008580000524d000048410000724100007641000056a51c00684100006a4100006c4100006e41000070410000604100006641000062410000481c3a00421c3a00461c3a001cda3b00ce430000e8430000c25c0000065c0000ee430000544400005c440000fce30000f4e3000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: HeadLight
-      m_OriginalName: HeadLight
+      m_Name: CountDownUI
+      m_OriginalName: CountDownUI
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 25082
+      m_UserData: 36550
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -867,9 +867,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.3457317, y: 0.08639121, z: 709.53485}
+    m_Target: {x: 431.26447, y: 268.02353, z: 11.811279}
     speed: 2
-    m_Value: {x: 6.3457317, y: 0.08639121, z: 709.53485}
+    m_Value: {x: 431.26447, y: 268.02353, z: 11.811279}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -915,13 +915,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.056187984, y: -0.73143137, z: 0.060703762, w: -0.6769139}
+    m_Target: {x: -0.021306535, y: -0.012585439, z: 0.00025946804, w: -0.9997158}
     speed: 2
-    m_Value: {x: -0.056186683, y: -0.73141444, z: 0.060702357, w: -0.67689824}
+    m_Value: {x: -0.021306066, y: -0.012585161, z: 0.0002594623, w: -0.99969375}
   m_Size:
-    m_Target: 6.5050707
+    m_Target: 244.69168
     speed: 2
-    m_Value: 6.5050707
+    m_Value: 244.69168
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -975,9 +975,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 34e00000
-      m_LastClickedID: 57396
-      m_ExpandedIDs: d019fbff4c46fbfff253fbff707afbfff4d0fbffca7afeff4c99feff8c0cffff7afafffff4faffff58fbffff6afbfffff0cd0000
+      m_SelectedIDs: 2e360000
+      m_LastClickedID: 13870
+      m_ExpandedIDs: 26f9ffff2e36000066360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1038,4 +1038,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 126
