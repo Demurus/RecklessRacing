@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,10 +10,12 @@ public class GameController : MonoBehaviour
 	//[SerializeField] private LevelsController levelsController;
 	//private SaveLoadSystem saveLoadSystem;
 	//public MenuUI MenuUI => menuUI;
-	[SerializeField] private RCC_CarControllerV3[] _cars;
-	[SerializeField] private RCC_CarControllerV3 _player;
+	[SerializeField] private RCC_CarControllerV3[] _botsPrefabs;
+	[SerializeField] private List<RCC_CarControllerV3> _bots;
+	
+	[SerializeField] private RCC_CarControllerV3 _playerPrefab;
+	private RCC_CarControllerV3 _player;
 	private static GameController _instance;
-
 	//private int level = 1;
 	//private int coins;
 
@@ -79,9 +82,22 @@ public class GameController : MonoBehaviour
 	}
 	public void InitLevel()
 	{
-		Transform[] spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints();
-		RCC_CarControllerV3 player= RCC.SpawnRCC(_cars[0], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity, true, false, true);
+		//Transform[] spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints();
+		List<Transform> spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints().ToList();
+		int carSpawnPosition= Random.Range(3, spawnPoints.Count);
+		RCC_CarControllerV3 player= RCC.SpawnRCC(_playerPrefab, spawnPoints[carSpawnPosition].position, Quaternion.identity,false, false, true);
+		RCC.RegisterPlayerVehicle(player);
+		spawnPoints.RemoveAt(carSpawnPosition);
 		_player = player;
+		for (int i = 0; i < spawnPoints.Count; i++)
+		{
+			//carSpawnPosition = Random.Range(0, spawnPoints.Count);
+			RCC_CarControllerV3 AIbot = RCC.SpawnRCC(_botsPrefabs[Random.Range(0, _botsPrefabs.Length)], spawnPoints[i].position, Quaternion.identity, false, false, true);
+			_bots.Add(AIbot);
+			//spawnPoints.RemoveAt(i);
+			Debug.Log(spawnPoints.Count);
+		}
+
 		UIController.StartRacePrep();
 		//OnRaceIsReady += StartRace;
 	}
@@ -90,10 +106,13 @@ public class GameController : MonoBehaviour
 	//{
 	//	State.Start<Race>();
 	//}
-	public void SetPlayerControllable()
+	public void SetCarsControllable()
 	{
 		_player.SetCanControl(true);
-		
+		foreach(RCC_CarControllerV3 bot in _bots)
+		{
+			bot.SetCanControl(true);
+		}
 	}
 	public void LoadLevel()
 	{

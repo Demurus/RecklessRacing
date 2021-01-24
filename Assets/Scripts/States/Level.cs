@@ -26,7 +26,7 @@ public class Race : State
     private void DoContinueState()
     {
 
-        GameController.Instance.SetPlayerControllable();
+        GameController.Instance.SetCarsControllable();
         //GameController.Instance.InputController.Interactable = true;
 
        // GameController.Instance.OnStageIsOver -= DoEndStage;

@@ -28,8 +28,8 @@ public class UIController : MonoBehaviour
 
     private void FinalizeRacePrep()
     {
-        GameController.Instance.OnRaceIsReady?.Invoke();
         Debug.Log("FinalizeRacePrep");
+        GameController.Instance.OnRaceIsReady?.Invoke();
         StartCoroutine(HideMenuTimer(1.0f, _countDownUI));
     }
 

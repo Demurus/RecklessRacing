@@ -51,6 +51,7 @@ public class RCC_Light : MonoBehaviour {
 
 	private bool parkLightFound = false;
 	private bool highBeamLightFound = false;
+	
 
 	// For Indicators.
 	private RCC_CarControllerV3.IndicatorsOn indicatorsOn;
