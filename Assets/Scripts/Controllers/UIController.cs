@@ -5,11 +5,19 @@ using UnityEngine.Events;
 
 public class UIController : MonoBehaviour
 {
-   [SerializeField] private CountDownUI _countDownUI;
+   // private static UIController _instance;
+    //public static UIController Instance => _instance;
 
-   public UnityAction OnCountDownFinished;
 
-   public void StartRacePrep()
+    [SerializeField] private CountDownUI _countDownUI;
+
+    public LapController LapController;
+    public UnityAction OnCountDownFinished;
+   // private void Awake()
+    //{
+    //    _instance = this;
+    //}
+    public void StartRacePrep()
     {
         OnCountDownFinished += FinalizeRacePrep;
         _countDownUI.Show();
@@ -33,7 +41,7 @@ public class UIController : MonoBehaviour
         StartCoroutine(HideMenuTimer(1.0f, _countDownUI));
     }
 
-    IEnumerator HideMenuTimer(float timer, UIController target)
+    IEnumerator HideMenuTimer(float timer, CountDownUI target)
     {
         yield return new WaitForSeconds(timer);
         target.Hide();

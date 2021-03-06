@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_IslandHighway.unity
     guid: c6d35cb124c57884ba7f9fc1afea0bbe
+  - enabled: 1
+    path: Assets/Scenes/CarSelectionMenu.unity
+    guid: cc67f293713d3044c9a75f4cf0c940b3
   m_configObjects: {}

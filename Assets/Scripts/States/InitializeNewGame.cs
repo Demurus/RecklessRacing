@@ -18,7 +18,7 @@ public class InitializeNewGame : State
          // GameC.Instance.MenuUI.Tutorial.TutorialForm = TutorialStages.Start;
     }
 
-    private void InitLevel()
+    private void InitLevel(string levelName)
     {
         GameController.Instance.LevelController.OnLevelLoaded -= InitLevel;
         GameController.Instance.InitLevel();

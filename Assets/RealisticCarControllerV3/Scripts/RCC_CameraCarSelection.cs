@@ -37,9 +37,11 @@ public class RCC_CameraCarSelection : MonoBehaviour{
 
 	}
 
-	void LateUpdate (){
+	void LateUpdate ()
+	{
 
-		if (target) {
+		if (target) 
+		{
 
 			if(selfTurn)
 				x += xSpeed / 2f * Time.deltaTime;
@@ -90,6 +92,10 @@ public class RCC_CameraCarSelection : MonoBehaviour{
 		selfTurn = false;
 		selfTurnTime = 0f;
 
+	}
+	public void SetTarget(Transform incomingTarget)
+	{
+		target = incomingTarget;
 	}
 
 }

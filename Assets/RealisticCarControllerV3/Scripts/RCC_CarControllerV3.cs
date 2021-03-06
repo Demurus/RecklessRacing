@@ -354,11 +354,11 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	private float angularVelo;
 
 	// Driving Assistances.
-	public bool ABS = true;
-	public bool TCS = true;
-	public bool ESP = true;
+	public bool ABS = false;
+	public bool TCS = false;
+	public bool ESP = false;
 	public bool steeringHelper = true;
-	public bool tractionHelper = true;
+	public bool tractionHelper = false;
 	public bool angularDragHelper = false;
 
 	// Driving Assistance thresholds.
@@ -466,7 +466,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		if(useDamage)
 			InitDamage();
 
-		CheckBehavior ();
+		
 
 		// Starting the engine.
 		if (runEngineAtAwake || externalController) {
@@ -485,8 +485,12 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		}
 
 	}
+    private void Start()
+    {
+		CheckBehavior();
+	}
 
-	void OnEnable(){
+    void OnEnable(){
 
 		StartCoroutine (RCCPlayerSpawned());
 
@@ -724,18 +728,23 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	/// <summary>
 	/// Overrides the behavior.
 	/// </summary>
-	private void CheckBehavior (){
+	public void CheckBehavior (){
 
 		if (RCCSettings.selectedBehaviorType == null)
 			return;
 
 		RCC_Settings.BehaviorType currentBehaviorType = RCCSettings.selectedBehaviorType;
 
-		steeringHelper = currentBehaviorType.steeringHelper;
-		tractionHelper = currentBehaviorType.tractionHelper;
-		ABS = currentBehaviorType.ABS;
-		ESP = currentBehaviorType.ESP;
-		TCS = currentBehaviorType.TCS;
+		//steeringHelper = currentBehaviorType.steeringHelper;
+		//tractionHelper = currentBehaviorType.tractionHelper;
+		//ABS = currentBehaviorType.ABS;
+		//ESP = currentBehaviorType.ESP;
+		//TCS = currentBehaviorType.TCS;
+		//steeringHelper = RCC_SceneManager.Instance.activePlayerVehicle.steeringHelper;
+		//tractionHelper = RCC_SceneManager.Instance.activePlayerVehicle.tractionHelper;
+		//ABS = RCC_SceneManager.Instance.activePlayerVehicle.ABS;
+		//ESP = RCC_SceneManager.Instance.activePlayerVehicle.ESP;
+		//TCS = RCC_SceneManager.Instance.activePlayerVehicle.TCS;
 
 		highspeedsteerAngle = Mathf.Clamp(highspeedsteerAngle, currentBehaviorType.highSpeedSteerAngleMinimum, currentBehaviorType.highSpeedSteerAngleMaximum);
 		highspeedsteerAngleAtspeed = Mathf.Clamp(highspeedsteerAngleAtspeed, currentBehaviorType.highSpeedSteerAngleAtspeedMinimum, currentBehaviorType.highSpeedSteerAngleAtspeedMaximum);

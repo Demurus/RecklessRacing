@@ -29,9 +29,9 @@ public class RCC_Settings : ScriptableObject {
 	public BehaviorType selectedBehaviorType{
 		get{
 			if (overrideBehavior)
-				return behaviorTypes [behaviorSelectedIndex];
+				return behaviorTypes [1];
 			else
-				return null;
+				return behaviorTypes[1];
 		}
 	}
 

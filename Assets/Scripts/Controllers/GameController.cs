@@ -11,9 +11,9 @@ public class GameController : MonoBehaviour
 	//private SaveLoadSystem saveLoadSystem;
 	//public MenuUI MenuUI => menuUI;
 	[SerializeField] private RCC_CarControllerV3[] _botsPrefabs;
-	[SerializeField] private List<RCC_CarControllerV3> _bots;
-	
-	[SerializeField] private RCC_CarControllerV3 _playerPrefab;
+	private List<RCC_CarControllerV3> _bots = new List<RCC_CarControllerV3>();
+	[SerializeField] private RCC_Camera _mainCamera;
+	[SerializeField] private GameObject _racingUI;
 	private RCC_CarControllerV3 _player;
 	private static GameController _instance;
 	//private int level = 1;
@@ -21,13 +21,17 @@ public class GameController : MonoBehaviour
 
 	//public SaveLoadSystem SaveLoadSystem => saveLoadSystem;
 	//public InputController InputController;
+	public List<RCC_CarControllerV3> PlayerPrefabs = new List<RCC_CarControllerV3>();
 	public LevelController LevelController;
 	public UIController UIController;
+	public MenuController MenuController;
+	//public LapController LapController;
 	public LevelCarsSpawnPositions LevelCarsSpawnPositions;
 
 	public UnityAction OnStageIsOver;
 	public UnityAction OnRaceIsReady;
 	//public UnityAction<int> OnCoinsChange;
+	public int AmountOfLaps = 3;
 	
 	public static GameController Instance => _instance;
 
@@ -60,52 +64,56 @@ public class GameController : MonoBehaviour
 		if (_instance == null)
 			_instance = this;
 		
-		//saveLoadSystem = new SaveLoadSystem();
-		//coins = saveLoadSystem.Data.Coins;
-		//level = saveLoadSystem.Data.Level;
-
-
 	}
 
 	private void Start()
 	{
-		//menuUI.Init();
-		//InputController.Init();
-		StartNewGame();
+		LoadMenu();
 	}
 
 	public void StartNewGame()
 	{
 		//TODO: точка входа в игровой цикл
+		//MenuController.OnMenuClosed -= StartNewGame;
 		State.Start<InitializeNewGame>();
-
 	}
+	
 	public void InitLevel()
 	{
+		_mainCamera.gameObject.SetActive(true);
+		_racingUI.SetActive(true);
 		//Transform[] spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints();
 		List<Transform> spawnPoints = FindObjectOfType<LevelCarsSpawnPositions>().GetSpawnPoints().ToList();
-		int carSpawnPosition= Random.Range(3, spawnPoints.Count);
-		RCC_CarControllerV3 player= RCC.SpawnRCC(_playerPrefab, spawnPoints[carSpawnPosition].position, Quaternion.identity,false, false, true);
-		RCC.RegisterPlayerVehicle(player);
-		spawnPoints.RemoveAt(carSpawnPosition);
+		int carSpawnPosition = Random.Range(3, spawnPoints.Count);
+		//RCC_CarControllerV3 spawnedVehicle = RCC.SpawnRCC(RCC_Vehicles.Instance.vehicles[i], spawnPosition.position, spawnPosition.rotation, false, false, false);
+		RCC_CarControllerV3 player= RCC.SpawnRCC(RCC_Vehicles.Instance.vehicles[PlayerPrefs.GetInt(PlayerPrefsKeys.SelectedRCCVehicle)], spawnPoints[carSpawnPosition].position, Quaternion.identity,false, false, true);
 		_player = player;
+		//_player.GetComponent<CarColorPreview>().SetColor(RCC_Colors.Instance.VehicleColors[PlayerPrefs.GetInt(PlayerPrefsKeys.SelectedVehicleColor)]);
+		RCC.RegisterPlayerVehicle(_player);
+		spawnPoints.RemoveAt(carSpawnPosition);
+		//_player = player;
 		for (int i = 0; i < spawnPoints.Count; i++)
 		{
 			//carSpawnPosition = Random.Range(0, spawnPoints.Count);
 			RCC_CarControllerV3 AIbot = RCC.SpawnRCC(_botsPrefabs[Random.Range(0, _botsPrefabs.Length)], spawnPoints[i].position, Quaternion.identity, false, false, true);
 			_bots.Add(AIbot);
-			//spawnPoints.RemoveAt(i);
-			Debug.Log(spawnPoints.Count);
+			
 		}
+		UIController.LapController.Init(AmountOfLaps);
 
 		UIController.StartRacePrep();
 		//OnRaceIsReady += StartRace;
 	}
-
-	//private void StartRace()
-	//{
-	//	State.Start<Race>();
-	//}
+	
+	public void SetVehiclesPosition(Transform targerPosition)
+	{
+		foreach (RCC_CarControllerV3 prefab in PlayerPrefabs)
+		{
+			prefab.transform.position = targerPosition.position;
+			prefab.transform.rotation = targerPosition.rotation;
+		}
+	}
+	
 	public void SetCarsControllable()
 	{
 		_player.SetCanControl(true);
@@ -118,7 +126,14 @@ public class GameController : MonoBehaviour
 	{
 		Debug.Log("Loading Level");
 		LevelController.LoadLevel("Level_IslandHighway");
+		//LevelController.LoadLevel("RCC Car Selection Load Next Scene");
 	}
+	public void LoadMenu()
+	{
+		MenuController.InitMenu();
+		//MenuController.OnMenuClosed += StartNewGame;
+	}
+
 	public void UnloadLevel()
 	{
 		Debug.Log("unLoading Level");

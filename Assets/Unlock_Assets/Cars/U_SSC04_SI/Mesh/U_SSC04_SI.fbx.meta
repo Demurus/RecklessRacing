@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: 73bb16b6a615d2b44a81709d63477310
+timeCreated: 1515089212
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CarBody
+    100002: U_SSC04_Black
+    100004: U_SSC04_Caliper_front
+    100006: U_SSC04_Caliper_front 1
+    100008: U_SSC04_caliper_rear
+    100010: U_SSC04_caliper_rear 1
+    100012: U_SSC04_CarbonFiber
+    100014: U_SSC04_carPaint
+    100016: U_SSC04_details
+    100018: U_SSC04_interior_low
+    100020: U_SSC04_lightDetails
+    100022: U_SSC04_lightGlass
+    100024: U_SSC04_Lights
+    100026: U_SSC04_Rotor
+    100028: U_SSC04_Rotor 1
+    100030: U_SSC04_Rotor 2
+    100032: U_SSC04_Rotor 3
+    100034: //RootNode
+    100036: U_SSC04_Tire
+    100038: U_SSC04_Tire 1
+    100040: U_SSC04_Tire 2
+    100042: U_SSC04_Tire 3
+    100044: U_SSC04_Wheel
+    100046: U_SSC04_Wheel 1
+    100048: U_SSC04_Wheel 2
+    100050: U_SSC04_Wheel 3
+    100052: U_SSC04_windows
+    100054: wheel_FL
+    100056: wheel_FR
+    100058: wheel_RL
+    100060: wheel_RR
+    100062: wheels
+    400000: CarBody
+    400002: U_SSC04_Black
+    400004: U_SSC04_Caliper_front
+    400006: U_SSC04_Caliper_front 1
+    400008: U_SSC04_caliper_rear
+    400010: U_SSC04_caliper_rear 1
+    400012: U_SSC04_CarbonFiber
+    400014: U_SSC04_carPaint
+    400016: U_SSC04_details
+    400018: U_SSC04_interior_low
+    400020: U_SSC04_lightDetails
+    400022: U_SSC04_lightGlass
+    400024: U_SSC04_Lights
+    400026: U_SSC04_Rotor
+    400028: U_SSC04_Rotor 1
+    400030: U_SSC04_Rotor 2
+    400032: U_SSC04_Rotor 3
+    400034: //RootNode
+    400036: U_SSC04_Tire
+    400038: U_SSC04_Tire 1
+    400040: U_SSC04_Tire 2
+    400042: U_SSC04_Tire 3
+    400044: U_SSC04_Wheel
+    400046: U_SSC04_Wheel 1
+    400048: U_SSC04_Wheel 2
+    400050: U_SSC04_Wheel 3
+    400052: U_SSC04_windows
+    400054: wheel_FL
+    400056: wheel_FR
+    400058: wheel_RL
+    400060: wheel_RR
+    400062: wheels
+    2100000: U_SSC04_lights_shdr
+    2100002: U_SSC04_windows_shdr
+    2100004: U_SSC04_Black_shdr
+    2100006: U_SSC04_carbonFiber_shdr
+    2100008: U_SSC04_lightGlass_shdr
+    2100010: U_SSC04_Calipers_shdr
+    2100012: U_SSC04_Rotor_shdr
+    2100014: U_SSC04_Tire_shdr
+    2100016: U_SSC04_Wheel_shdr
+    2100018: U_SSC04_carBotton_shdr
+    2100020: U_SSC04_interior_low_shdr
+    2100022: U_SSC04_carPaint_shdr
+    2300000: U_SSC04_Black
+    2300002: U_SSC04_Caliper_front
+    2300004: U_SSC04_Caliper_front 1
+    2300006: U_SSC04_caliper_rear
+    2300008: U_SSC04_caliper_rear 1
+    2300010: U_SSC04_CarbonFiber
+    2300012: U_SSC04_carPaint
+    2300014: U_SSC04_details
+    2300016: U_SSC04_interior_low
+    2300018: U_SSC04_lightDetails
+    2300020: U_SSC04_lightGlass
+    2300022: U_SSC04_Lights
+    2300024: U_SSC04_Rotor
+    2300026: U_SSC04_Rotor 1
+    2300028: U_SSC04_Rotor 2
+    2300030: U_SSC04_Rotor 3
+    2300032: U_SSC04_Tire
+    2300034: U_SSC04_Tire 1
+    2300036: U_SSC04_Tire 2
+    2300038: U_SSC04_Tire 3
+    2300040: U_SSC04_Wheel
+    2300042: U_SSC04_Wheel 1
+    2300044: U_SSC04_Wheel 2
+    2300046: U_SSC04_Wheel 3
+    2300048: U_SSC04_windows
+    3300000: U_SSC04_Black
+    3300002: U_SSC04_Caliper_front
+    3300004: U_SSC04_Caliper_front 1
+    3300006: U_SSC04_caliper_rear
+    3300008: U_SSC04_caliper_rear 1
+    3300010: U_SSC04_CarbonFiber
+    3300012: U_SSC04_carPaint
+    3300014: U_SSC04_details
+    3300016: U_SSC04_interior_low
+    3300018: U_SSC04_lightDetails
+    3300020: U_SSC04_lightGlass
+    3300022: U_SSC04_Lights
+    3300024: U_SSC04_Rotor
+    3300026: U_SSC04_Rotor 1
+    3300028: U_SSC04_Rotor 2
+    3300030: U_SSC04_Rotor 3
+    3300032: U_SSC04_Tire
+    3300034: U_SSC04_Tire 1
+    3300036: U_SSC04_Tire 2
+    3300038: U_SSC04_Tire 3
+    3300040: U_SSC04_Wheel
+    3300042: U_SSC04_Wheel 1
+    3300044: U_SSC04_Wheel 2
+    3300046: U_SSC04_Wheel 3
+    3300048: U_SSC04_windows
+    4300000: U_SSC04_Lights
+    4300002: U_SSC04_windows
+    4300004: U_SSC04_Black
+    4300006: U_SSC04_CarbonFiber
+    4300008: U_SSC04_lightGlass
+    4300010: U_SSC04_caliper_rear
+    4300012: U_SSC04_Rotor
+    4300014: U_SSC04_Tire
+    4300016: U_SSC04_Wheel
+    4300018: U_SSC04_Caliper_front
+    4300020: U_SSC04_Rotor
+    4300022: U_SSC04_Tire
+    4300024: U_SSC04_Wheel
+    4300026: U_SSC04_caliper_rear
+    4300028: U_SSC04_Rotor
+    4300030: U_SSC04_Tire
+    4300032: U_SSC04_Wheel
+    4300034: U_SSC04_Caliper_front
+    4300036: U_SSC04_Rotor
+    4300038: U_SSC04_Tire
+    4300040: U_SSC04_Wheel
+    4300042: U_SSC04_details
+    4300044: U_SSC04_interior_low
+    4300046: U_SSC04_carPaint
+    4300048: U_SSC04_lightDetails
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_Black_shdr
+    second: {fileID: 2100000, guid: ea68b95c74b11a440bae555d7e6f6947, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_Calipers_shdr
+    second: {fileID: 2100000, guid: e11311ba145497f41a44c615150c4ab9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_Rotor_shdr
+    second: {fileID: 2100000, guid: bc7d546b24a8db641bccc6f58fed2d5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_Tire_shdr
+    second: {fileID: 2100000, guid: 60376df3badc7ce4e8dcd8cb74c02166, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_Wheel_shdr
+    second: {fileID: 2100000, guid: c56254b65f0226146bce9c71d968102d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_carBotton_shdr
+    second: {fileID: 2100000, guid: b45e462607c670348bf649c4b0ba69dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_carPaint_shdr
+    second: {fileID: 2100000, guid: 9eb792cf8e0a937409a81033e4b6d889, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_carbonFiber_shdr
+    second: {fileID: 2100000, guid: 0897d9cdf7852bd49b7ce4e6e117f137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_interior_low_shdr
+    second: {fileID: 2100000, guid: cacc8161e81f0264d9e7430437b43007, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_lightGlass_shdr
+    second: {fileID: 2100000, guid: d858e6e3120941f418053d90a04ec09b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_lights_shdr
+    second: {fileID: 2100000, guid: 6c39f2a663d576d4b8dc98722fe77d9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: U_SSC04_windows_shdr
+    second: {fileID: 2100000, guid: a2afb451cf5957c4194b9a508befae7e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 4.581
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

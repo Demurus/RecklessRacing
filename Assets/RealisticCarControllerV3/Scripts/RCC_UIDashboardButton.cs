@@ -79,25 +79,30 @@ public class RCC_UIDashboardButton : MonoBehaviour {
 			
 		case ButtonType.Headlights:
 
-			if(!RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn && RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn){
-			
-				RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn = true;
-				RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = true;
+				//if(!RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn && RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn){
+
+				//	RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn = true;
+				//	RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = true;
+				//	break;
+
+				//}
+
+				//if(!RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn)
+				//	RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = true;
+				RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = !RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn;
+
+
+				//if (RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn)
+				//	RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = false;
+
+				//if(RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn){
+
+				//	RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = false;
+				//	RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn = false;
+
+				//}
+
 				break;
-
-			}
-
-			if(!RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn)
-				RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = true;
-		
-			if(RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn){
-			
-				RCC_SceneManager.Instance.activePlayerVehicle.lowBeamHeadLightsOn = false;
-				RCC_SceneManager.Instance.activePlayerVehicle.highBeamHeadLightsOn = false;
-
-			}
-			
-			break;
 
 		case ButtonType.LeftIndicator:
 

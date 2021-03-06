@@ -34,7 +34,7 @@ public class RCC_Light : MonoBehaviour {
 
 	private RCC_CarControllerV3 carController;
 	private Light _light;
-	private Projector projector;
+	public Projector projector;
 	private LensFlare lensFlare;
 	private Camera mainCamera;
 
@@ -45,6 +45,7 @@ public class RCC_Light : MonoBehaviour {
 	public enum LightType{HeadLight, BrakeLight, ReverseLight, Indicator, ParkLight, HighBeamHeadLight, External};
 	public float inertia = 1f;
 	public Flare flare;
+	public Material material;
 
 	public int refreshRate = 30;
 	private float refreshTimer = 0f;
@@ -57,6 +58,12 @@ public class RCC_Light : MonoBehaviour {
 	private RCC_CarControllerV3.IndicatorsOn indicatorsOn;
 	private AudioSource indicatorSound;
 	public AudioClip indicatorClip{get{return RCCSettings.indicatorClip;}}
+
+	public void HeadLightsOn()
+    {
+
+    }
+
 
 	void Start () {
 		
@@ -72,20 +79,27 @@ public class RCC_Light : MonoBehaviour {
 			
 		}
 
-		if(RCCSettings.useLightProjectorForLightingEffect){
-			
-			projector = GetComponent<Projector>();
-			if(projector == null){
-				projector = ((GameObject)Instantiate(RCCSettings.projector, transform.position, transform.rotation)).GetComponent<Projector>();
-				projector.transform.SetParent(transform, true);
-			}
-			projector.ignoreLayers = RCCSettings.projectorIgnoreLayer;
-			if(lightType != LightType.HeadLight)
-				projector.transform.localRotation = Quaternion.Euler(20f, transform.localPosition.z > 0f ? 0f : 180f, 0f);
-			Material newMaterial = new Material(projector.material);
-			projector.material = newMaterial ;
+		//if(RCCSettings.useLightProjectorForLightingEffect){
 
+		//projector = GetComponent<Projector>();
+		//if(projector == null){
+		if (lightType == LightType.HeadLight)
+        {
+			projector = ((GameObject)Instantiate(RCCSettings.projector, transform.position, transform.rotation)).GetComponent<Projector>();
+			projector.transform.SetParent(transform, true);
+			projector.transform.localPosition = Vector3.zero;
+			Vector3 newYPosition = projector.transform.position+ new Vector3(0,1,0);
+			projector.transform.position = newYPosition;
+			//}
+			projector.ignoreLayers = RCCSettings.projectorIgnoreLayer;
 		}
+			
+			
+			//	projector.transform.localRotation = Quaternion.Euler(20f, transform.localPosition.z > 0f ? 0f : 180f, 0f);
+			//Material newMaterial = new Material(projector.material);
+			//projector.material = newMaterial ;
+
+		//}
 
 		if(RCCSettings.useLightsAsVertexLights){
 			_light.renderMode = LightRenderMode.ForceVertex;
@@ -103,20 +117,21 @@ public class RCC_Light : MonoBehaviour {
 			
 		}
 
-		RCC_Light[] allLights = carController.GetComponentsInChildren<RCC_Light> ();
+		//RCC_Light[] allLights = carController.GetComponentsInChildren<RCC_Light> ();
 
-		for (int i = 0; i < allLights.Length; i++) {
+		//for (int i = 0; i < allLights.Length; i++) {
 
-			if (allLights [i].lightType == LightType.ParkLight)
-				parkLightFound = true;
+		//	if (allLights [i].lightType == LightType.ParkLight)
+		//		parkLightFound = true;
 
-			if (allLights [i].lightType == LightType.HighBeamHeadLight)
-				highBeamLightFound = true;
+		//	if (allLights [i].lightType == LightType.HighBeamHeadLight)
+		//		highBeamLightFound = true;
 
-		}
+		//}
 
 		CheckRotation ();
 		CheckLensFlare ();
+		//transform.localEulerAngles = new Vector3(10f, 0f, 0f);
 
 	}
 
@@ -131,8 +146,8 @@ public class RCC_Light : MonoBehaviour {
 
 	void Update () {
 		
-		if(RCCSettings.useLightProjectorForLightingEffect)
-			Projectors();
+		//if(RCCSettings.useLightProjectorForLightingEffect)
+		//	Projectors();
 
 		if (lensFlare)
 			LensFlare ();
@@ -140,25 +155,29 @@ public class RCC_Light : MonoBehaviour {
 		switch(lightType){
 
 		case LightType.HeadLight:
-			if (highBeamLightFound) {
+                //if (highBeamLightFound) {
 
-				Lighting (carController.lowBeamHeadLightsOn ? .5f : 0f, 50f, 90f);
+                //	Lighting (carController.lowBeamHeadLightsOn ? .5f : 0f, 50f, 90f);
 
-			}else{
+                //}else{
 
-				Lighting (carController.lowBeamHeadLightsOn ? .5f : 0f, 50f, 90f);
+                //Lighting (carController.lowBeamHeadLightsOn ? .5f : 0f, 50f, 90f);
 
-				if (!carController.lowBeamHeadLightsOn && !carController.highBeamHeadLightsOn)
-					Lighting (0f);
-				if (carController.lowBeamHeadLightsOn && !carController.highBeamHeadLightsOn) {
-					Lighting (.5f, 50f, 90f);
-					transform.localEulerAngles = new Vector3 (10f, 0f, 0f);
-				} else if (carController.highBeamHeadLightsOn) {
-					Lighting (.5f, 100f, 45f);
-					transform.localEulerAngles = new Vector3 (0f, 0f, 0f);
-				}
-
-			}
+               // if (!carController.lowBeamHeadLightsOn && !carController.highBeamHeadLightsOn)
+              //      Lighting(0f);
+                //if (carController.lowBeamHeadLightsOn && !carController.highBeamHeadLightsOn)
+                //{
+                //    Lighting(.5f, 50f, 90f);
+                //    transform.localEulerAngles = new Vector3(10f, 0f, 0f);
+                //}
+                //else if (carController.highBeamHeadLightsOn)
+                //{
+                //    Lighting(.5f, 100f, 45f);
+                //    transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+                //}
+                if (carController.lowBeamHeadLightsOn) Lighting(0.5f, true);
+				if (!carController.lowBeamHeadLightsOn) Lighting(0f, false);
+			
 			break;
 
 		case LightType.BrakeLight:
@@ -182,9 +201,9 @@ public class RCC_Light : MonoBehaviour {
 			Indicators();
 			break;
 
-		case LightType.HighBeamHeadLight:
-			Lighting(carController.highBeamHeadLightsOn ? 1f : 0f, 200f, 45f);
-			break;
+		//case LightType.HighBeamHeadLight:
+		//	Lighting(carController.highBeamHeadLightsOn ? 1f : 0f, 200f, 45f);
+		//	break;
 
 		}
 		
@@ -203,6 +222,24 @@ public class RCC_Light : MonoBehaviour {
 		_light.spotAngle = spotAngle;
 
 	}
+	void Lighting(float input, bool projectorIsOn)
+	{
+		_light.intensity = Mathf.Lerp(_light.intensity, input, Time.deltaTime * inertia * 20f);
+		if (projectorIsOn)
+		{
+			projector.enabled = true;
+			transform.localEulerAngles = new Vector3(10f, 0f, 0f);
+		}
+		else 
+		{
+			projector.enabled = false;
+			transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+		}
+		
+
+	}
+
+
 
 	void Indicators(){
 
@@ -275,21 +312,21 @@ public class RCC_Light : MonoBehaviour {
 
 	}
 
-	private void Projectors(){
+	//private void Projectors(){
 
-		if(!_light.enabled){
-			projector.enabled = false;
-			return;
-		}else{
-			projector.enabled = true;
-		}
+	//	if(!_light.enabled){
+	//		projector.enabled = false;
+	//		return;
+	//	}else{
+	//		projector.enabled = true;
+	//	}
 
-		projector.material.color = _light.color * (_light.intensity / 5f);
+	//	projector.material.color = _light.color * (_light.intensity / 5f);
 
-		projector.farClipPlane = Mathf.Lerp(10f, 40f, (_light.range - 50) / 150f);
-		projector.fieldOfView = Mathf.Lerp(40f, 30f, (_light.range - 50) / 150f);
+	//	projector.farClipPlane = Mathf.Lerp(10f, 40f, (_light.range - 50) / 150f);
+	//	projector.fieldOfView = Mathf.Lerp(40f, 30f, (_light.range - 50) / 150f);
 
-	}
+	//}
 
 	private void LensFlare(){
 

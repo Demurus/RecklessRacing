@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RCCVersion: 3.3
   controllerSelectedIndex: 0
-  behaviorSelectedIndex: 3
+  behaviorSelectedIndex: 1
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
   maxAngularVelocity: 8
-  overrideBehavior: 1
+  overrideBehavior: 0
   behaviorTypes:
   - behaviorName: Simulator
     steeringHelper: 1
@@ -52,11 +52,11 @@ MonoBehaviour:
     sidewaysAsymptoteValue: 0.75
   - behaviorName: Racing
     steeringHelper: 1
-    tractionHelper: 1
-    ABS: 1
-    ESP: 1
-    TCS: 1
-    applyExternalWheelFrictions: 0
+    tractionHelper: 0
+    ABS: 0
+    ESP: 0
+    TCS: 0
+    applyExternalWheelFrictions: 1
     applyRelativeTorque: 0
     highSpeedSteerAngleMinimum: 0
     highSpeedSteerAngleMaximum: 60
@@ -238,7 +238,7 @@ MonoBehaviour:
   projector: {fileID: 102982, guid: 7f7b6e33e52b82e43a57b7cc85ed5cf9, type: 3}
   projectorIgnoreLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 311
   headLights: {fileID: 146832, guid: 660ec4b1fd79fa74096f0ab9e6cbd2ca, type: 3}
   brakeLights: {fileID: 136378, guid: 40648ef4ebef26d4c9cc0663c2f08e5e, type: 3}
   reverseLights: {fileID: 197258, guid: 188c477ab444228409c4a246c02a86bd, type: 3}

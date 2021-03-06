@@ -14,6 +14,8 @@ public class Race : State
         //GameController.Instance.InputController.Interactable = true;
        // stage = 1;
         Debug.Log("Level Started");
+        // UIController.Instance.LapController.BeginTimer();
+        GameController.Instance.UIController.LapController.BeginTimer();
         DoContinueState();
     }
 
