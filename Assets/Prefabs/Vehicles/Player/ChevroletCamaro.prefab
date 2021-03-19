@@ -6691,16 +6691,16 @@ MonoBehaviour:
   launched: 0
   autoGenerateGearCurves: 1
   autoGenerateTargetSpeedsForChangingGear: 1
-  audioType: 0
-  autoCreateEngineOffSounds: 1
-  engineStartClip: {fileID: 0}
-  engineClipHigh: {fileID: 0}
-  engineClipMed: {fileID: 0}
-  engineClipLow: {fileID: 0}
-  engineClipIdle: {fileID: 0}
-  engineClipHighOff: {fileID: 0}
-  engineClipMedOff: {fileID: 0}
-  engineClipLowOff: {fileID: 0}
+  audioType: 2
+  autoCreateEngineOffSounds: 0
+  engineStartClip: {fileID: 8300000, guid: ddb190d1c4868614890f60614b5fe0b4, type: 3}
+  engineClipHigh: {fileID: 8300000, guid: 7bfabb598772aba418a435dbfd922bac, type: 3}
+  engineClipMed: {fileID: 8300000, guid: e7c45234ed6b7ea4db6de95b059f8b3e, type: 3}
+  engineClipLow: {fileID: 8300000, guid: 04c564ea905eb444386b3559b65179c9, type: 3}
+  engineClipIdle: {fileID: 8300000, guid: 156fb9f21287f4b478278ede53af6236, type: 3}
+  engineClipHighOff: {fileID: 8300000, guid: 28963fe2764ffcd42a085528f5af17b7, type: 3}
+  engineClipMedOff: {fileID: 8300000, guid: 9e239313b3cc06e4fb15aec0c6ec0cbc, type: 3}
+  engineClipLowOff: {fileID: 8300000, guid: 3504adb89c1e67d499fb2c7023e14ae0, type: 3}
   minEngineSoundPitch: 0.75
   maxEngineSoundPitch: 1.75
   minEngineSoundVolume: 0.05
@@ -17472,7 +17472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7418751515411552237
 Transform:
   m_ObjectHideFlags: 0

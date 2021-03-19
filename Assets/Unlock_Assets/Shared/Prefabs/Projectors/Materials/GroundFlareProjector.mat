@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: GroundFlareProjector
   m_Shader: {fileID: 4800000, guid: c2586b533c7a1fa44a129a1e966c5214, type: 3}
   m_ShaderKeywords: 
@@ -39,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowTex:
-        m_Texture: {fileID: 2800000, guid: 5ff294497d50f5f40827f7986e8c60af, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7d00b19470b388f409a3e8c7a9ffc46a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []

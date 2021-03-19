@@ -78,6 +78,7 @@
     <Compile Include="Assets\RealisticCarControllerV3\Editor\RCC_RecordsEditor.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Editor\RCC_SceneManagerEditor.cs" />
     <Compile Include="Assets\RealisticCarControllerV3\Editor\RCC_SettingsEditor.cs" />
+    <Compile Include="Assets\RealisticEngineSound\Editor\RealisticEngineSoundEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

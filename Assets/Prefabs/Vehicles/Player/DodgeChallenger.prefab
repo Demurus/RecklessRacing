@@ -10271,14 +10271,14 @@ MonoBehaviour:
   autoGenerateTargetSpeedsForChangingGear: 1
   audioType: 2
   autoCreateEngineOffSounds: 0
-  engineStartClip: {fileID: 8300000, guid: f159b65f9c1cd30499084b7fa84653bd, type: 3}
-  engineClipHigh: {fileID: 8300000, guid: 78b4bbfb3de36cd478e9d5ab36c87ddd, type: 3}
-  engineClipMed: {fileID: 8300000, guid: f04e21fbeb1ca194682ec376f0c3a40b, type: 3}
-  engineClipLow: {fileID: 8300000, guid: ae96d7066abc3e54cb2acaa91e59d104, type: 3}
-  engineClipIdle: {fileID: 8300000, guid: 7583c1e99e1ce984fbb70ba4fc2181dd, type: 3}
-  engineClipHighOff: {fileID: 8300000, guid: c523f1f43c8fac44e81ef1684188e6f3, type: 3}
-  engineClipMedOff: {fileID: 8300000, guid: 5c7590aa88b732244a2e154549fa19d4, type: 3}
-  engineClipLowOff: {fileID: 8300000, guid: e4d51be18ff5bdf4ab3a89c34bd0b43e, type: 3}
+  engineStartClip: {fileID: 8300000, guid: 3d9cc668ff2f3734a81bdb7943afe78b, type: 3}
+  engineClipHigh: {fileID: 8300000, guid: 0c62ed23f67dfb647a66e0b33f8083d3, type: 3}
+  engineClipMed: {fileID: 8300000, guid: 52ee6439e2a5bf749832ea3e0c42d1c7, type: 3}
+  engineClipLow: {fileID: 8300000, guid: 7cc945fccaddf0c48a6fa20065d0d762, type: 3}
+  engineClipIdle: {fileID: 8300000, guid: fcbac167aadbc62458a5932e1663a958, type: 3}
+  engineClipHighOff: {fileID: 8300000, guid: 1e71fc686f07c6c4bb4940b61c4f9984, type: 3}
+  engineClipMedOff: {fileID: 8300000, guid: 76f8cd9b1282cb94b9d60ce8645bc650, type: 3}
+  engineClipLowOff: {fileID: 8300000, guid: 3909986b916ea7a4b9a35c647f7c5abe, type: 3}
   minEngineSoundPitch: 0.75
   maxEngineSoundPitch: 1.75
   minEngineSoundVolume: 0.05
@@ -10345,11 +10345,11 @@ MonoBehaviour:
   velocityDirection: {fileID: 0}
   steeringDirection: {fileID: 0}
   velocityAngle: -3.2645786
-  ABS: 1
+  ABS: 0
   TCS: 0
   ESP: 1
   steeringHelper: 1
-  tractionHelper: 0
+  tractionHelper: 1
   angularDragHelper: 0
   ABSThreshold: 0.35
   TCSThreshold: 0.5
@@ -10997,7 +10997,7 @@ WheelCollider:
     damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0.3
+  m_ForceAppPointDistance: 0.1
   m_Mass: 40
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -11744,7 +11744,7 @@ WheelCollider:
     damper: 2000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0.3
+  m_ForceAppPointDistance: 0.1
   m_Mass: 40
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -21676,7 +21676,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a484362d0a4d814e8f65811b981f832, type: 2}
+  - {fileID: 2100000, guid: 693ea0975c2228447923eed6c1854c41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21870,7 +21870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4430241007169708353
 Transform:
   m_ObjectHideFlags: 0
