@@ -78,8 +78,9 @@ public class RCC_AICarController : MonoBehaviour {
 	public delegate void onRCCAIDestroyed(RCC_AICarController RCCAI);
 	public static event onRCCAIDestroyed OnRCCAIDestroyed;
 
-	void Start() {
+	public void Init() {
 
+		this.gameObject.tag = Tags.AI;
 		// Getting main controller.
 		carController = GetComponent<RCC_CarControllerV3>();
 		carController.externalController = true;

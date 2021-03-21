@@ -88,15 +88,19 @@ public class GameController : MonoBehaviour
 		//RCC_CarControllerV3 spawnedVehicle = RCC.SpawnRCC(RCC_Vehicles.Instance.vehicles[i], spawnPosition.position, spawnPosition.rotation, false, false, false);
 		RCC_CarControllerV3 player= RCC.SpawnRCC(RCC_Vehicles.Instance.vehicles[PlayerPrefs.GetInt(PlayerPrefsKeys.SelectedRCCVehicle)], spawnPoints[carSpawnPosition].position, Quaternion.identity,false, false, true);
 		_player = player;
-		//_player.GetComponent<CarColorPreview>().SetColor(RCC_Colors.Instance.VehicleColors[PlayerPrefs.GetInt(PlayerPrefsKeys.SelectedVehicleColor)]);
+		_player.GetComponent<CarColorPreview>().SetColor(RCC_Colors.Instance.VehicleColors[PlayerPrefs.GetInt(PlayerPrefsKeys.SelectedVehicleColor)]);
 		RCC.RegisterPlayerVehicle(_player);
 		spawnPoints.RemoveAt(carSpawnPosition);
 		//_player = player;
 		for (int i = 0; i < spawnPoints.Count; i++)
 		{
 			//carSpawnPosition = Random.Range(0, spawnPoints.Count);
-			RCC_CarControllerV3 AIbot = RCC.SpawnRCC(_botsPrefabs[Random.Range(0, _botsPrefabs.Length)], spawnPoints[i].position, Quaternion.identity, false, false, true);
-			_bots.Add(AIbot);
+			//RCC_CarControllerV3 AIbot = RCC.SpawnRCC(_botsPrefabs[Random.Range(0, _botsPrefabs.Length)], spawnPoints[i].position, Quaternion.identity, false, false, true);
+			RCC_CarControllerV3 AIBot = RCC.SpawnRCC(RCC_Vehicles.Instance.vehicles[Random.Range(0, RCC_Vehicles.Instance.vehicles.Length)], spawnPoints[i].position, Quaternion.identity, false, false, true);
+			AIBot.gameObject.AddComponent<RCC_AICarController>();
+			AIBot.GetComponent<RCC_AICarController>().Init();
+			AIBot.GetComponent<CarColorPreview>().SetColor(RCC_Colors.Instance.VehicleColors[Random.Range(0,RCC_Colors.Instance.VehicleColors.Length)]);
+			_bots.Add(AIBot);
 			
 		}
 		UIController.LapController.Init(AmountOfLaps);
@@ -104,6 +108,7 @@ public class GameController : MonoBehaviour
 		UIController.StartRacePrep();
 		//OnRaceIsReady += StartRace;
 	}
+	
 	
 	public void SetVehiclesPosition(Transform targerPosition)
 	{

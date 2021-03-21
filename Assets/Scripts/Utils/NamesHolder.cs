@@ -12,3 +12,8 @@ public class SceneNames
 {
     public const string CarSelectionMenu = "CarSelectionMenu";
 }
+public class Tags
+{
+    public const string AI = "AI";
+    public const string Player = "Player";
+}

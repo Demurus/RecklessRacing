@@ -710,6 +710,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AllSkyFree\AllSkyFree_Readme.txt" />
+    <None Include="Assets\POLYGON city pack\Read_me.txt" />
     <None Include="Assets\RealisticCarControllerV3\LICENSE - Read Me!.txt" />
     <None Include="Assets\RealisticCarControllerV3\Scripts\RCC_Skidmarks.shader" />
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\Driver\ReadMe.txt" />

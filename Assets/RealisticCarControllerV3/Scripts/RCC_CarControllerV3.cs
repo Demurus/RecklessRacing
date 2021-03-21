@@ -83,8 +83,14 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	// Bools.
 	public bool canControl = true;																			// Enables / Disables controlling the vehicle.
 	public bool runEngineAtAwake{get{return RCCSettings.runEngineAtAwake;}}		// Engine running at Awake?
-	public bool engineRunning = false;																		// Engine running now?
-	public bool autoReverse{get{if(!externalController) return RCCSettings.autoReverse; else return true;}}                            // Enables / Disables auto reversing when player press brake button. Useful for if you are making parking style game.
+	public bool engineRunning = false;                                                                      // Engine running now?
+
+    internal void AddComponent<T>()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool autoReverse{get{if(!externalController) return RCCSettings.autoReverse; else return true;}}                            // Enables / Disables auto reversing when player press brake button. Useful for if you are making parking style game.
 	public bool automaticGear{get{if(!externalController) return RCCSettings.useAutomaticGear; else return true;}}                // Enables / Disables automatic gear shifting of the vehicle.
 	internal bool semiAutomaticGear = false;															// Enables / Disables automatic gear shifting of the vehicle.
 	internal bool canGoReverseNow = false;

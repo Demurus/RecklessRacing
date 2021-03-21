@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: RCC_Vehicles
   m_EditorClassIdentifier: 
   vehicles:
-  - {fileID: 11495930, guid: 0722a9e01046ddd4289c83d741ad6252, type: 3}
   - {fileID: 730276038025816508, guid: ee9d2e8488afa2c48b2d2bd0c46c4a53, type: 3}
-  - {fileID: 11409208, guid: a404321611e983a4ea9bf400a193b597, type: 3}
   - {fileID: 1425953185875702259, guid: 181ec9d3976e7824a9e6b789bff2e7b9, type: 3}
-  - {fileID: 11444474, guid: 4e587cd0df47fbc49b5c3bff314d1974, type: 3}
-  - {fileID: 114571143157923052, guid: 582ec036f71d2b84590c26a52a0a52b6, type: 3}
-  - {fileID: 11421802, guid: 6fa73193fc7c3a040acf01c5757f473a, type: 3}
-  - {fileID: 11499070, guid: 0295a61c2e7e21544867a415e2b6b5f4, type: 3}
-  - {fileID: 11490338, guid: f06ac96efe73a7443b281e572e36f1d0, type: 3}
+  - {fileID: 5299136440443824449, guid: da8a876b915c09248abab9ace6fae564, type: 3}
+  - {fileID: 2140614878758979391, guid: 7d2f8dc52440c4c409adccae6550a043, type: 3}
+  - {fileID: 6043643349405953926, guid: c95a291a77787f14e90df969864f8703, type: 3}
